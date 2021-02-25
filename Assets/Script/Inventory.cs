@@ -10,13 +10,13 @@ public class Inventory : MonoBehaviour
     [SerializeField]
     Animator Closes;
     public bool isopen = false;
-    // Start is called before the first frame update
+   
     void Start()
     {
         
     }
 
-    // Update is called once per frame
+  
     void Update()
     {
         if (isopen == false)
