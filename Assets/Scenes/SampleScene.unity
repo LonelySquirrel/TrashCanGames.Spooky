@@ -1326,11 +1326,11 @@ RectTransform:
   m_Father: {fileID: 830118554}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2149.4, y: 87}
-  m_SizeDelta: {x: 301.45105, y: 523.16943}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: -181, y: 16.9}
+  m_SizeDelta: {x: 180.02234, y: 295.59796}
+  m_Pivot: {x: 0, y: 0.5}
 --- !u!95 &1454596676
 Animator:
   serializedVersion: 3
@@ -1422,7 +1422,7 @@ MonoBehaviour:
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 100, y: 100}
+  m_CellSize: {x: 60, y: 60}
   m_Spacing: {x: 0, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
