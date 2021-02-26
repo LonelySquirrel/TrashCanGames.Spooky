@@ -1,5 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
+using UnityEngine.EventSystems;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,7 +12,8 @@ public class Item : MonoBehaviour
     string itemname;
     [SerializeField]
     Sprite itemSprite;
-
+    [SerializeField]
+    GameObject UseButton;
     private void Start()
     {
         inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>(); //Hittar tar "Inventory" komponenten från spelaren
@@ -26,8 +29,11 @@ public class Item : MonoBehaviour
                 inventory.slots[i].name = itemname; // Ger namnet till objektet
                 inventory.slots[i].GetComponent<Image>().sprite = itemSprite; // Ger Spriten till objektet
                 inventory.slots[i].GetComponent<Image>().enabled = true; // Visar Spriten -Christian
+                Destroy(gameObject);
                 break;
+                
             }
+            
         }
     }
 
