@@ -5,48 +5,48 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    [SerializeField]
-    Animator Opens;
-    [SerializeField]
-    Animator Closes;
-    public bool isopen = false;
-   
-    void Start()
-    {
-        
-    }
+    [SerializeField] // (
+    Animator Opens; //
+    [SerializeField] //
+    Animator Closes; //
+    public bool isopen = false; // ) -Hjalmar
 
+    //De är public så att andra scripts har tillgång till dem.
+    public bool[] slotsUsed; // ( Kollar om sloten är full.
+    public GameObject[] slots; // ) -Christian
   
     void Update()
     {
-        if (isopen == false)
+        Opens.SetBool("IsOpen", isopen);
+        if (Input.GetKeyDown(KeyCode.Tab))
         {
-            if(Input.GetKeyDown(KeyCode.Tab))
+            if (isopen == false)// Byter mellan att ha menyn öppen och stängd
             {
-                Open();
+                print("Opening"); //debug
+
                 isopen = true;
             }
-        }
-        else if (isopen == true)
-        {
-            if (Input.GetKeyDown(KeyCode.Tab))
+            else if (isopen == true)
             {
-                Close();
+                print("Closing"); //debug
+
                 isopen = false;
+
             }
-            
         }
+        
+        // ) -Christian
     }
 
-    void Open()
+    /*void Open() // -Hjalmar
     {
         print("Opening");
-        Opens.SetTrigger("Open");
+        Opens.SetBool("IsOpen", true);
     }
-    void Close()
+    void Close() // -Hjalmar
     {
         print("Closeing");
-        Closes.SetTrigger("Close");
-    }
+        Closes.SetBool("IsOpen");
+    }*/
 }
 
