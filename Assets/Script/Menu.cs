@@ -6,8 +6,6 @@ using UnityEngine.UI;
 
 public class Menu : MonoBehaviour
 {
-
-    public Slider slide;
     public GameObject Easy;
     public GameObject Hard;
     //Linus
