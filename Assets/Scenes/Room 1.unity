@@ -3046,7 +3046,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 3.6908834
+  orthographic size: 4.9626074
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -3214,6 +3214,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6565374361783140878, guid: 716203a4a2982ed4e9bb91db12cae20b,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 6.1064
+      objectReference: {fileID: 0}
+    - target: {fileID: 6565374361783140878, guid: 716203a4a2982ed4e9bb91db12cae20b,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 6.1064
+      objectReference: {fileID: 0}
+    - target: {fileID: 6565374361783140878, guid: 716203a4a2982ed4e9bb91db12cae20b,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5266
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 716203a4a2982ed4e9bb91db12cae20b, type: 3}
 --- !u!1 &1422088782 stripped
@@ -3239,7 +3254,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.19, y: 0.32}
+    oldSize: {x: 0.32, y: 0.32}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
