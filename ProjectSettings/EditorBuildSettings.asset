@@ -12,9 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Option menu.unity
     guid: 03347ab90ce611e4ca1c5762a464d763
   - enabled: 1
-    path: Assets/Scenes/Chris' Test Scene.unity
-    guid: c4ea5201987a9fa449f67f0baa006290
-  - enabled: 1
     path: Assets/Scenes/Room 1.unity
     guid: 51323f8ddfb6c6d43b8541f33d962859
+  - enabled: 1
+    path: Assets/Scenes/Chris' Test Scene.unity
+    guid: c4ea5201987a9fa449f67f0baa006290
   m_configObjects: {}
