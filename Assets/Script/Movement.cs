@@ -9,7 +9,9 @@ public class Movement : MonoBehaviour
     [Header("Movement")]
     [SerializeField, Range(1, 25)]
     public float speed = 10f; //Rörelse hastighet. -Christian
-    
+    bool interacting; //Kollar om spelaren interagerar. -Christian
+    public BoxCollider2D interactingCollider; //Hitboxen av när man interagerar. -Christian
+
     Vector2 movementVector;
     // Update is called once per frame
     void Update()
@@ -19,10 +21,20 @@ public class Movement : MonoBehaviour
         animator.SetFloat("Horizontal Movement", movementVector.x); //Ger knapptrycket till animatorn. -Christian
         animator.SetFloat("Vertical Movement", movementVector.y);
         animator.SetFloat("Speed", movementVector.sqrMagnitude); //Get hastigheten til animatorn. -Christian
+        if (Input.GetKey(KeyCode.E))
+        {
+            interacting = true;
+        }
+        else
+        {
+            interacting = false;
+        }
     }
     // UpdateFixed is a physics based Update
     private void FixedUpdate()
     {
         rb2d.MovePosition(rb2d.position + movementVector * speed * Time.fixedDeltaTime); //Rör på spelaren baserat på knapptryck. -Christian
     }
+
+    //Kommunicerar med Interactbles. -Christian
 }

@@ -24,6 +24,6 @@ public class FadeTrigger : MonoBehaviour
     }
     void loadScene()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(2);
     }
 }
