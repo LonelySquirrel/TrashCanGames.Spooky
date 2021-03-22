@@ -37,4 +37,7 @@ public class Movement : MonoBehaviour
     }
 
     //Kommunicerar med Interactbles. -Christian
+    private void OnTriggerStay(Collider other)
+    {
+    }
 }
