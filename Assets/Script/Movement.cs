@@ -9,8 +9,12 @@ public class Movement : MonoBehaviour
     [Header("Movement")]
     [SerializeField, Range(1, 25)]
     public float speed = 10f; //Rörelse hastighet. -Christian
-    bool interacting; //Kollar om spelaren interagerar. -Christian
     public BoxCollider2D interactingCollider; //Hitboxen av när man interagerar. -Christian
+    Collider[] interactable; //Kollar om spelaren interagerar. -Christian
+    public float selectionRadius = 1;
+    public LayerMask ItemMask;
+    public float offset = 1;
+    Vector3 interactingGizmos;
 
     Vector2 movementVector;
     // Update is called once per frame
@@ -18,17 +22,26 @@ public class Movement : MonoBehaviour
     {
         movementVector.x = Input.GetAxisRaw("Horizontal"); //Kollar knapptryck i horizontal axel. Höger eller vänster. -Christian
         movementVector.y = Input.GetAxisRaw("Vertical"); //Kollar knapptryck i vertikal axel. Upp eller ner. -Christian
-        animator.SetFloat("Horizontal Movement", movementVector.x); //Ger knapptrycket till animatorn. -Christian
-        animator.SetFloat("Vertical Movement", movementVector.y);
+        if (movementVector.x != 0)
+        {
+            animator.SetFloat("Horizontal Movement", movementVector.x); //Ger knapptrycket till animatorn. -Christian
+        }
+        if (movementVector.y != 0)
+        {
+            animator.SetFloat("Vertical Movement", movementVector.y);
+        }
         animator.SetFloat("Speed", movementVector.sqrMagnitude); //Get hastigheten til animatorn. -Christian
-        if (Input.GetKey(KeyCode.E))
+        interactingGizmos = transform.position + new Vector3(movementVector.x * offset, movementVector.y * offset, 0);
+        interactable = Physics.OverlapSphere(interactingGizmos, selectionRadius, ItemMask);
+        foreach (Collider gameobject in interactable)
         {
-            interacting = true;
+            if (gameobject.gameObject.GetComponent<Item>() != null && Input.GetKey(KeyCode.E))
+            {
+                print("item");
+            }
         }
-        else
-        {
-            interacting = false;
-        }
+        
+        
     }
     // UpdateFixed is a physics based Update
     private void FixedUpdate()
@@ -39,5 +52,11 @@ public class Movement : MonoBehaviour
     //Kommunicerar med Interactbles. -Christian
     private void OnTriggerStay(Collider other)
     {
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(interactingGizmos, selectionRadius);
     }
 }
