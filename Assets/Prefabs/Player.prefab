@@ -100,8 +100,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb2d: {fileID: 6565374361783140864}
   animator: {fileID: 6565374361783140877}
-  speed: 3.5
+  speed: 5
   interactingCollider: {fileID: 0}
+  selectionRadius: 1
+  ItemMask:
+    serializedVersion: 2
+    m_Bits: 0
+  offset: 1
 --- !u!50 &6565374361783140864
 Rigidbody2D:
   serializedVersion: 4
