@@ -37,7 +37,7 @@ public class Movement : MonoBehaviour
         {
             if (gameobject.gameObject.GetComponent<Item>() != null && Input.GetKey(KeyCode.E))
             {
-                print("item");
+                gameobject.gameObject.GetComponent<Item>().Interact();
             }
         }
         
