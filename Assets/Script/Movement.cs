@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
@@ -11,6 +9,11 @@ public class Movement : MonoBehaviour
     public float speed = 10f; //Rörelse hastighet. -Christian
     bool interacting; //Kollar om spelaren interagerar. -Christian
     public BoxCollider2D interactingCollider; //Hitboxen av när man interagerar. -Christian
+    Collider2D interactable; //Kollar om spelaren interagerar. -Christian
+    public float selectionRadius = 1;
+    public LayerMask ItemMask;
+    public float offset = 1;
+    Vector3 interactingGizmos;
 
     Vector2 movementVector;
     // Update is called once per frame
@@ -21,13 +24,12 @@ public class Movement : MonoBehaviour
         animator.SetFloat("Horizontal Movement", movementVector.x); //Ger knapptrycket till animatorn. -Christian
         animator.SetFloat("Vertical Movement", movementVector.y);
         animator.SetFloat("Speed", movementVector.sqrMagnitude); //Get hastigheten til animatorn. -Christian
-        if (Input.GetKey(KeyCode.E))
+
+        interactingGizmos = transform.position + new Vector3(movementVector.x * offset, movementVector.y * offset, 0);
+        interactable = Physics2D.OverlapCircle(interactingGizmos, selectionRadius, ItemMask);
+        if (interactable.gameObject.GetComponent<Item>() != null && Input.GetKey(KeyCode.E))
         {
-            interacting = true;
-        }
-        else
-        {
-            interacting = false;
+            interactable.gameObject.GetComponent<Item>().Interact();
         }
     }
     // UpdateFixed is a physics based Update
@@ -36,8 +38,9 @@ public class Movement : MonoBehaviour
         rb2d.MovePosition(rb2d.position + movementVector * speed * Time.fixedDeltaTime); //Rör på spelaren baserat på knapptryck. -Christian
     }
 
-    //Kommunicerar med Interactbles. -Christian
-    private void OnTriggerStay(Collider other)
+    private void OnDrawGizmosSelected()
     {
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(interactingGizmos, selectionRadius);
     }
 }

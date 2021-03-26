@@ -1,13 +1,19 @@
 fileFormatVersion: 2
-guid: 8672012a32c86f448b954075a5358537
+guid: 12506908064200d4db7a9749c1be88cf
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4038631579361571121
-    second: MONSTER_0
+      213: -2564044837951841777
+    second: Monster 1_0
   - first:
-      213: -8896931167122042081
-    second: MONSTER_1
+      213: -3202132520435631857
+    second: Monster 1_1
+  - first:
+      213: 412218540045037834
+    second: Monster 1_2
+  - first:
+      213: -7852906142344182833
+    second: Monster 1_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -117,7 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MONSTER_0
+      name: Monster 1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -131,14 +137,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fce8a75e9f5e3f7c0800000000000000
-      internalID: -4038631579361571121
+      spriteID: f0ad4b50eceaa6cd0800000000000000
+      internalID: -2564044837951841777
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MONSTER_1
+      name: Monster 1_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0935b3307dbf83d0800000000000000
+      internalID: -3202132520435631857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Monster 1_2
       rect:
         serializedVersion: 2
         x: 0
@@ -152,8 +179,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f13d690dd30c78480800000000000000
-      internalID: -8896931167122042081
+      spriteID: a01f631049e78b500800000000000000
+      internalID: 412218540045037834
       vertices: []
       indices: 
       edges: []
