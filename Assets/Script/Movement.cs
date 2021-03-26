@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
@@ -10,7 +8,7 @@ public class Movement : MonoBehaviour
     [SerializeField, Range(1, 25)]
     public float speed = 10f; //Rörelse hastighet. -Christian
     public BoxCollider2D interactingCollider; //Hitboxen av när man interagerar. -Christian
-    Collider[] interactable; //Kollar om spelaren interagerar. -Christian
+    Collider2D interactable; //Kollar om spelaren interagerar. -Christian
     public float selectionRadius = 1;
     public LayerMask ItemMask;
     public float offset = 1;
@@ -32,16 +30,16 @@ public class Movement : MonoBehaviour
         }
         animator.SetFloat("Speed", movementVector.sqrMagnitude); //Get hastigheten til animatorn. -Christian
         interactingGizmos = transform.position + new Vector3(movementVector.x * offset, movementVector.y * offset, 0);
-        interactable = Physics.OverlapSphere(interactingGizmos, selectionRadius, ItemMask);
-        foreach (Collider gameobject in interactable)
+        interactable = Physics2D.OverlapCircle(interactingGizmos, selectionRadius, ItemMask);
+        print(interactable);
+        if (interactable.gameObject.GetComponent<Item>() != null && Input.GetKey(KeyCode.E))
         {
-            if (gameobject.gameObject.GetComponent<Item>() != null && Input.GetKey(KeyCode.E))
-            {
-                gameobject.gameObject.GetComponent<Item>().Interact();
-            }
+            interactable.gameObject.GetComponent<Item>().Interact();
+            print("item");
         }
-        
-        
+
+
+
     }
     // UpdateFixed is a physics based Update
     private void FixedUpdate()
