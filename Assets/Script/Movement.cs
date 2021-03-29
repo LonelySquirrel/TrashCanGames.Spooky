@@ -27,10 +27,14 @@ public class Movement : MonoBehaviour
 
         interactingGizmos = transform.position + new Vector3(movementVector.x * offset, movementVector.y * offset, 0);
         interactable = Physics2D.OverlapCircle(interactingGizmos, selectionRadius, ItemMask);
-        if (interactable.gameObject.GetComponent<Item>() != null && Input.GetKey(KeyCode.E))
+        if (interactable != null)
         {
-            interactable.gameObject.GetComponent<Item>().Interact();
+            if (interactable.gameObject.GetComponent<Item>() != null && Input.GetKey(KeyCode.E))
+            {
+                interactable.gameObject.GetComponent<Item>().Interact();
+            }
         }
+
     }
     // UpdateFixed is a physics based Update
     private void FixedUpdate()

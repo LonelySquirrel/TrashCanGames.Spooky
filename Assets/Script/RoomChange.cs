@@ -17,7 +17,7 @@ public class RoomChange : MonoBehaviour
 
     // Update is called once per frame
   
-    void FadeIN()
+    public void FadeIN()
     {
         FadeO.CrossFadeAlpha(0, 1, false);
     }
