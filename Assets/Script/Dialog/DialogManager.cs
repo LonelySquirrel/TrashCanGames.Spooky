@@ -20,11 +20,11 @@ public class DialogManager : MonoBehaviour
     private void Update()
     {
         if(textActive == false) 
-        { text.text = " ";
-            textBox.enabled = false;
+        { text.text = " "; // gömmer text rutan ifall man är ur en konversation
+            textBox.enabled = false; 
             continueButton.enabled = false;
         }
-        else { textBox.enabled = true;
+        else { textBox.enabled = true; // aktiverar text rutan igen när man går in på en konversation. 
             continueButton.enabled = true;  
               }
     }
