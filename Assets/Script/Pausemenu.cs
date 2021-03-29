@@ -7,11 +7,13 @@ public class Pausemenu : MonoBehaviour
 {
     //Linus kod
     public GameObject menu;
-
+    public GameObject help;
+    
     // Start is called before the first frame update
     void Start()
     {
         menu.SetActive(false);
+        help.SetActive(false);
     }
 
     // Update is called once per frame
@@ -19,21 +21,19 @@ public class Pausemenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (menu)
-            {
-                menu.SetActive(true);
-                Time.timeScale = 0f;
-            }
-            else if (menu == true)
-            {
-                menu.SetActive(false);
-                Time.timeScale = 1f;
-            }
+            menu.SetActive(true);
         }
     }
     public void Menu()
     {
         SceneManager.LoadScene(0);
     }
-
+    public void resume()
+    {
+        menu.SetActive(false);
+    }
+    public void Help()
+    {
+        help.SetActive(true);
+    }
 }
