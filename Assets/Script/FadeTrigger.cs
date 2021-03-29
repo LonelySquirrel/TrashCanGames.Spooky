@@ -11,8 +11,12 @@ public class FadeTrigger : MonoBehaviour
     
     public RoomChange FadeOut;
     public Transform TargetPonit;// vart  kommer när man öpnar dören
+    private DialogueTrigger Trigger;
+
     public string KeyName;
+
     Inventory inventory;
+
     public bool isLocked;
     // Start is called before the first frame update
     void Start()
@@ -44,6 +48,10 @@ public class FadeTrigger : MonoBehaviour
             {
                 isLocked = false;
             }
+        }
+        if (isLocked == true)
+        {
+            FindObjectOfType<DialogueTrigger>();
         }
         
         if (isLocked == false)

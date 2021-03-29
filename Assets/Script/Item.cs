@@ -12,7 +12,7 @@ public class Item : MonoBehaviour
     GameObject UseButton;
     private void Start()
     {
-        inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>(); //Hittar tar "Inventory" komponenten från spelaren
+        inventory = GameObject.FindGameObjectWithTag("Inventory").GetComponent<Inventory>(); //Hittar tar "Inventory" komponenten från spelaren
     }
 
     private void OnMouseDown()
@@ -22,6 +22,7 @@ public class Item : MonoBehaviour
 
     public void Interact()
     {
+        print("fucky you");
         for (int i = 0; i < inventory.slots.Length; i++) //Kollar alla slots för en tom ruta
         {
             if (inventory.slotsUsed[i] == false)

@@ -2470,6 +2470,7 @@ GameObject:
   - component: {fileID: 126320701}
   - component: {fileID: 126320700}
   - component: {fileID: 126320699}
+  - component: {fileID: 126320703}
   m_Layer: 0
   m_Name: Laibray Entrance
   m_TagString: Untagged
@@ -2581,6 +2582,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 126320697}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &126320703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 126320697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46902bf0d2d926b41871566560aee88b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialog:
+    name: You
+    sentence:
+    - It's locked i need a key
 --- !u!1 &142074417
 GameObject:
   m_ObjectHideFlags: 0
@@ -3887,6 +3904,11 @@ PrefabInstance:
     - target: {fileID: 8375113400827091545, guid: 0a2be34782f9c254aa30f2261ef5cf6d,
         type: 3}
       propertyPath: m_Name
+      value: Inventory
+      objectReference: {fileID: 0}
+    - target: {fileID: 8375113400827091545, guid: 0a2be34782f9c254aa30f2261ef5cf6d,
+        type: 3}
+      propertyPath: m_TagString
       value: Inventory
       objectReference: {fileID: 0}
     - target: {fileID: 9160967979149490984, guid: 0a2be34782f9c254aa30f2261ef5cf6d,
