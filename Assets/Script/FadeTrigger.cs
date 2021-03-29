@@ -11,10 +11,13 @@ public class FadeTrigger : MonoBehaviour
     
     public RoomChange FadeOut;
     public Transform TargetPonit;// vart  kommer när man öpnar dören
+    public string KeyName;
+    Inventory inventory;
+    public bool isLocked;
     // Start is called before the first frame update
     void Start()
     {
-
+        inventory = FindObjectOfType<Inventory>();
     }
 
     // Update is called once per frame
@@ -35,7 +38,20 @@ public class FadeTrigger : MonoBehaviour
     }
     private void Opendoor()
     {
-        Player.transform.position = TargetPonit.position;
+        for (int i = 0; i < inventory.slots.Length; i++)
+        {
+            if (inventory.slots[i].name == KeyName)
+            {
+                isLocked = false;
+            }
+        }
+        
+        if (isLocked == false)
+        {
+            Player.transform.position = TargetPonit.position;
+        }
+
+        
     }
 
     void Fadein()
