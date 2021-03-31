@@ -14,6 +14,7 @@ public class Movement : MonoBehaviour
     public LayerMask ItemMask;
     public float offset = 1;
     Vector3 interactingGizmos;
+    public Vector3 interactingGizmosOffset;
 
     Vector2 movementVector;
     // Update is called once per frame
@@ -25,7 +26,10 @@ public class Movement : MonoBehaviour
         animator.SetFloat("Vertical Movement", movementVector.y);
         animator.SetFloat("Speed", movementVector.sqrMagnitude); //Get hastigheten til animatorn. -Christian
 
-        interactingGizmos = transform.position + new Vector3(movementVector.x * offset, movementVector.y * offset, 0);
+        if (movementVector.sqrMagnitude != 0)
+        {
+            interactingGizmos = transform.position + interactingGizmosOffset + new Vector3(movementVector.x * offset, movementVector.y * offset, 0);
+        }
         interactable = Physics2D.OverlapCircle(interactingGizmos, selectionRadius, ItemMask);
         if (interactable != null)
         {
