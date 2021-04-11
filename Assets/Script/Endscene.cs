@@ -25,7 +25,7 @@ public class Endscene : MonoBehaviour
 
     public void hjalmar()
     {
-        Hjalmar.SetActive(false);
+        Hjalmar.SetActive(true);
         Cristian.SetActive(false);
         Emil.SetActive(false);
         Linus.SetActive(false);
@@ -35,7 +35,7 @@ public class Endscene : MonoBehaviour
     public void cristian()
     {
         Hjalmar.SetActive(false);
-        Cristian.SetActive(false);
+        Cristian.SetActive(true);
         Emil.SetActive(false);
         Linus.SetActive(false);
         Kaylei.SetActive(false);
@@ -45,7 +45,7 @@ public class Endscene : MonoBehaviour
     {
         Hjalmar.SetActive(false);
         Cristian.SetActive(false);
-        Emil.SetActive(false);
+        Emil.SetActive(true);
         Linus.SetActive(false);
         Kaylei.SetActive(false);
         Madelene.SetActive(false);
@@ -55,26 +55,26 @@ public class Endscene : MonoBehaviour
         Hjalmar.SetActive(false);
         Cristian.SetActive(false);
         Emil.SetActive(false);
-        Linus.SetActive(false);
+        Linus.SetActive(true);
         Kaylei.SetActive(false);
         Madelene.SetActive(false);
     }
-    public void graf1()
+    public void kaylei()
+    {
+        Hjalmar.SetActive(false);
+        Cristian.SetActive(false);
+        Emil.SetActive(false);
+        Linus.SetActive(false);
+        Kaylei.SetActive(true);
+        Madelene.SetActive(false);
+    }
+    public void madelene()
     {
         Hjalmar.SetActive(false);
         Cristian.SetActive(false);
         Emil.SetActive(false);
         Linus.SetActive(false);
         Kaylei.SetActive(false);
-        Madelene.SetActive(false);
-    }
-    public void graf2()
-    {
-        Hjalmar.SetActive(false);
-        Cristian.SetActive(false);
-        Emil.SetActive(false);
-        Linus.SetActive(false);
-        Kaylei.SetActive(false);
-        Madelene.SetActive(false);
+        Madelene.SetActive(true);
     }
 }
