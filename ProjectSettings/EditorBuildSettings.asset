@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Chris' Test Scene.unity
     guid: c4ea5201987a9fa449f67f0baa006290
+  - enabled: 1
+    path: Assets/Scenes/Ending screen.unity
+    guid: 438bb015be99c2243a75b4d6fc95d012
   m_configObjects: {}
