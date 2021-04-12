@@ -6310,6 +6310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d317780fd05f53d46a8cd18a6002b211, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aiPath: {fileID: 1811582419}
 --- !u!1 &565468084
 GameObject:
   m_ObjectHideFlags: 0
@@ -17865,7 +17866,12 @@ PrefabInstance:
     - target: {fileID: 6565374361783140879, guid: 716203a4a2982ed4e9bb91db12cae20b,
         type: 3}
       propertyPath: interactingGizmosOffset.y
-      value: -0.56
+      value: -0.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 6565374361783140879, guid: 716203a4a2982ed4e9bb91db12cae20b,
+        type: 3}
+      propertyPath: selectionRadius
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 716203a4a2982ed4e9bb91db12cae20b, type: 3}
@@ -19408,6 +19414,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6eb1402c17e84a9282a7f0f62eb584f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  version: 2
+  radius: 0.13
+  height: 2
+  repathRate: 0.5
+  canSearch: 1
+  canMove: 1
+  maxSpeed: 5
+  gravity: {x: 0, y: 0, z: 0}
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  centerOffsetCompatibility: NaN
+  orientation: 1
+  enableRotation: 0
+  targetCompatibility: {fileID: 0}
+  maxAcceleration: -2.5
+  rotationSpeed: 32400
+  slowdownDistance: 0.6
+  pickNextWaypointDist: 2
+  endReachedDistance: 0.2
+  alwaysDrawGizmos: 0
+  slowWhenNotFacingTarget: 1
+  whenCloseToDestination: 0
+  constrainInsideGraph: 0
 --- !u!114 &1811582420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19420,6 +19450,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 373b52eb9bf8c40f785bb6947a1aee66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  version: 1
+  drawGizmos: 1
+  detailedGizmos: 0
+  startEndModifier:
+    addPoints: 0
+    exactStartPoint: 3
+    exactEndPoint: 3
+    useRaycasting: 0
+    mask:
+      serializedVersion: 2
+      m_Bits: 4294967295
+    useGraphRaycasting: 0
+  traversableTags: -1
+  tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  graphMask:
+    value: -1
 --- !u!4 &1811582421
 Transform:
   m_ObjectHideFlags: 0
@@ -19447,6 +19493,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9679e68a0f1144e79c664d9a11ca121, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  version: 1
+  target: {fileID: 1422088789}
 --- !u!58 &1811582423
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -20121,6 +20169,49 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78396926cbbfc4ac3b48fc5fc34a87d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  version: 1
+  data:
+    dataString: UEsDBBQAAAgIAAAIIez7sinBXgIAAAIFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVMty2jAU/RVG64axMTSku9YhpIs8JqSTjTeKdI01yJJHjwDJ8O+9km3s0hXi3Nc5R1f+IkLZBpjTZm0Ef9AcyI8JCWfybTIE7+FAt1ptxCf0OW+Cuyok0ZjzQp3QiKehzOoanBHsp9rKkJwg6JUotalXfAu5ts4iXFJpAUNGu1CtEPqakAP+XN2EkiOeZtfh9Imnm2RywiMD5cCMUrNlOk1nXXo2m87TrqDN94pJWjfAA/mhLF30E9KkTVQorMtJposwSUspbMeLuGMTdee0sR5VYQIXFHVGMuk0Q6ACsa1cYD0ufypLC66zwdDjrTBoWNuX/NKtizW1u5bdB5U+TFqks8irbfrwX/wqjeHS6Pq+n4taEHKVYLsXemTUupHNY/h2RD2atKdyR98lvFWgHvXaaK84Bp3xodRbmN0Of8/S8grYbsBbqhegbwbXe8/7Ow0aTlH9IZeifo/ez1tgI3V0PK4CGLyd30g4LortWiAaWPyx8Eq3443qAnfCWIehTqUK9N61NyGVrKJnQY13uTYKItyRbkBR6Y7P2MZdXuFFbDT2InJHw9vphnex/klclER4yE+Si9Cz3p8vy1Z6/wC2evJOCgUD6RB4RJ9yrVS7YWNP+rKNNyVlo7KtF/zf1SLZcrFcJtcLzhiblxm9ohmU35dlNptDScv5gsTdEwp1UvncEu3swVtTQ3OFe9Z/UiZrQ5u47dzQ/Vp81npkuVCl3jADoJ7aDmfiYHAIvky+4gIN2oBzQsX7Jl8FkZrtgBfnRkVUujo4Q4uhS0Ea8aFdQAqSx29IQU7k9BdQSwMEFAAACAgAAAgh7KpwXsRtAAAAeAAAAAkAJABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQGrVipLLSrOzM9TslIw0TPSMzTVUVBKL0osyCgGihiCOKWZKSB2tJKxhamFhYG5aUpycrJJmnGibqJxapqZRZqxkUlqWmKaialSLFB9SWVBql9ibipET0BiSUZaZl5KZl66nntRZoo7yGil2FoAUEsBAi0AFAAACAgAAAgh7PuyKcFeAgAAAgUAAAsAJAAAAAAAAAAAAAAAAAAAAGdyYXBoMC5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsBAi0AFAAACAgAAAgh7KpwXsRtAAAAeAAAAAkAJAAAAAAAAAAAAAAAqwIAAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLBQYAAAAAAgACALgAAABjAwAAAAA=
+    upgradeData: 
+    file_cachedStartup: {fileID: 0}
+    data_cachedStartup: 
+    cacheStartup: 0
+  showNavGraphs: 1
+  showUnwalkableNodes: 1
+  debugMode: 0
+  debugFloor: 0
+  debugRoof: 1
+  manualDebugFloorRoof: 0
+  showSearchTree: 0
+  unwalkableNodeDebugSize: 0.3
+  logPathResults: 1
+  maxNearestNodeDistance: 100
+  scanOnStartup: 1
+  fullGetNearestSearch: 0
+  prioritizeGraphs: 0
+  prioritizeGraphsLimit: 1
+  colorSettings:
+    _SolidColor: {r: 0.11764706, g: 0.4, b: 0.7882353, a: 0.9}
+    _UnwalkableNode: {r: 1, g: 0, b: 0, a: 0.5}
+    _BoundsHandles: {r: 0.29, g: 0.454, b: 0.741, a: 0.9}
+    _ConnectionLowLerp: {r: 0, g: 1, b: 0, a: 0.5}
+    _ConnectionHighLerp: {r: 1, g: 0, b: 0, a: 0.5}
+    _MeshEdgeColor: {r: 0, g: 0, b: 0, a: 0.5}
+    _AreaColors:
+    - {r: 0, g: 0, b: 0, a: 0}
+  tagNames: []
+  heuristic: 2
+  heuristicScale: 1
+  threadCount: 1
+  maxFrameTime: 1
+  batchGraphUpdates: 0
+  graphUpdateBatchingInterval: 0.2
+  euclideanEmbedding:
+    mode: 0
+    seed: 0
+    pivotPointRoot: {fileID: 0}
+    spreadOutCount: 1
+  showGraphs: 1
 --- !u!4 &1995868603
 Transform:
   m_ObjectHideFlags: 0
