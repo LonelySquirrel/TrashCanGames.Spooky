@@ -9,5 +9,6 @@ public class Camerafollow : MonoBehaviour
     private void FixedUpdate()
     {
         transform.position = target.position;
+        // simpel kod för att kameran ska följa spelaren
     }
-}
+}// Hjalmar Heike

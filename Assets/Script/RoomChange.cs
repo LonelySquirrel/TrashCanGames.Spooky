@@ -11,7 +11,7 @@ public class RoomChange : MonoBehaviour
     void Start()
     {
         FadeO.canvasRenderer.SetAlpha(1.0f);
-        FadeIN();
+        FadeIN();// gör så att den svarta boxen blir transparant
         
     }
 
@@ -19,10 +19,10 @@ public class RoomChange : MonoBehaviour
   
     public void FadeIN()
     {
-        FadeO.CrossFadeAlpha(0, 1, false);
+        FadeO.CrossFadeAlpha(0, 1, false);// styr när bilden ska bli transparant
     }
     public void FadeOut()
     {
-        FadeO.CrossFadeAlpha(1, 1, false);
+        FadeO.CrossFadeAlpha(1, 1, false);// Styr när och hur lång tid det tar för bilden att bli hel igen.
     }
-}
+}//HJalmar Heike
