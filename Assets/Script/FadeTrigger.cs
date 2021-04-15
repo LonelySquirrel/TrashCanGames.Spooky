@@ -30,7 +30,7 @@ public class FadeTrigger : MonoBehaviour
     {
         if (other.tag == "Player")
         {// kollar så att spelaren är vid dörren
-            if (Input.GetKeyDown(KeyCode.F))// Kollar om spelaren klickar på F innan den aktiverar rästen av koden
+            if (Input.GetKeyDown(KeyCode.E))// Kollar om spelaren klickar på F innan den aktiverar rästen av koden
             {
                 FadeOut.FadeOut();
                 Invoke("Fadein", 1);// Gör så att Spelet väntar innan spelaren teleporteras till sin punkt
